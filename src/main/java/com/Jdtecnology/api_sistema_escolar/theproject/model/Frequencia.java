@@ -25,8 +25,10 @@ public class Frequencia {
     @Column(nullable = false, length = 20)
     private String status; 
 
+    // Construtor padrão
     public Frequencia() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getIdAluno() { return idAluno; }

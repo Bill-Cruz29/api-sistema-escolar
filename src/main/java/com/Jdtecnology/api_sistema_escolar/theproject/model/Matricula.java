@@ -18,41 +18,22 @@ public class Matricula {
     @Column(name = "id_matricula")
     private Integer id;
 
-    // Mudamos de Integer para a Entidade Aluno com @ManyToOne
     @ManyToOne
     @JoinColumn(name = "id_aluno", nullable = false)
     private Aluno aluno;
 
-    // Mudamos de Integer para a Entidade AnoLectivo com @ManyToOne
     @ManyToOne
     @JoinColumn(name = "id_ano", nullable = false)
     private AnoLectivo anoLectivo;
 
-    public Matricula() {
-    }
+    // Construtor padrão
+    public Matricula() {}
 
-    // Novos Getters e Setters atualizados para os objetos
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
-
-    public AnoLectivo getAnoLectivo() {
-        return anoLectivo;
-    }
-
-    public void setAnoLectivo(AnoLectivo anoLectivo) {
-        this.anoLectivo = anoLectivo;
-    }
+    // Getters e Setters
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    public Aluno getAluno() { return aluno; }
+    public void setAluno(Aluno aluno) { this.aluno = aluno; }
+    public AnoLectivo getAnoLectivo() { return anoLectivo; }
+    public void setAnoLectivo(AnoLectivo anoLectivo) { this.anoLectivo = anoLectivo; }
 }

@@ -80,12 +80,14 @@ public class Inscricao {
     @Column(name = "id_ano")
     private Integer idAno;
 
-    // --- NOVOS CAMPOS ADICIONADOS CONFORME A IMAGEM ---
     @Column(name = "turno", length = 10)
     private String turno;
 
     @Column(name = "ultima_classe", length = 100)
     private String ultimaClasse;
+
+    @Column(name = "aceito", nullable = false)
+    private Boolean aceito = false;
 
     // Construtor Padrão
     public Inscricao() {}
@@ -155,27 +157,15 @@ public class Inscricao {
     public void setClassePretendida(String classePretendida) { this.classePretendida = classePretendida; }
 
     // --- MÉTODOS ADICIONADOS PARA O ANO LECTIVO ---
-    public Integer getIdAno() { 
-        return idAno; 
-    }
+    public Integer getIdAno() { return idAno;}
+    public void setIdAno(Integer idAno) { this.idAno = idAno; }
     
-    public void setIdAno(Integer idAno) { 
-        this.idAno = idAno; 
-    }
-    
-    public String getTurno() {
-        return turno;
-    }
+    public String getTurno() { return turno; }
+    public void setTurno(String turno) { this.turno = turno; }
 
-    public void setTurno(String turno) {
-        this.turno = turno;
-    }
+    public String getUltimaClasse() { return ultimaClasse; }
+    public void setUltimaClasse(String ultimaClasse) { this.ultimaClasse = ultimaClasse; }
 
-    public String getUltimaClasse() {
-        return ultimaClasse;
-    }
-
-    public void setUltimaClasse(String ultimaClasse) {
-        this.ultimaClasse = ultimaClasse;
-    }
+    public Boolean getAceito() { return aceito; }
+    public void setAceito(Boolean aceito) { this.aceito = aceito; }
 }

@@ -27,8 +27,10 @@ public class Boletim {
     @Column(precision = 5, scale = 2)
     private BigDecimal media;
 
+    // Construtor padrão
     public Boletim() {}
 
+    // Getters e Setters    
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getIdAluno() { return idAluno; }

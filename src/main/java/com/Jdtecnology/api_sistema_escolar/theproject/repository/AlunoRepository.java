@@ -8,6 +8,5 @@ import java.util.Optional; // Garante que este import está aqui!
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, Integer> {
     
-    // ADICIONA ESTA LINHA EXATAMENTE AQUI:
     Optional<Aluno> findByBi(String bi);
 }

@@ -51,6 +51,13 @@ public class MatriculaCustomController {
 
         Inscricao inscricao = inscricaoOpt.get();
         AnoLectivo anoLectivo = anoOpt.get();
+ 
+        //
+        if (inscricao.getAceito()) {
+            Map<String, String> erro = new HashMap<>();
+            erro.put("erro", "Esta inscrição já foi aceita e o aluno já está matriculado.");
+            return new ResponseEntity<>(erro, HttpStatus.BAD_REQUEST);
+        }
 
         // 2. Passa TODOS os dados da inscrição para a tabela de Alunos
         Aluno novoAluno = new Aluno();
@@ -66,10 +73,9 @@ public class MatriculaCustomController {
         novoAluno.setNomeEncarregado(inscricao.getNomeEncarregado());
         novoAluno.setFoto(inscricao.getFoto());
         
-        // CORREÇÃO AQUI: Usa diretamente o idCurso que mapeámos na entidade Inscricao
         novoAluno.setIdCurso(inscricao.getIdCurso()); 
 
-        // ADICIONANDO OS NOVOS ATRIBUTOS VINDOS DA IMAGEM DO INSOMNIA
+        // Adicionando os novos atributos vindos do cadastro Blz
         novoAluno.setMunicipioResidencia(inscricao.getMunicipioResidencia());
         novoAluno.setMunicipioEscola(inscricao.getMunicipioEscola());
         novoAluno.setTipoEscola(inscricao.getTipoEscola());
@@ -77,8 +83,9 @@ public class MatriculaCustomController {
         novoAluno.setNivelEnsino(inscricao.getNivelEnsino());
         novoAluno.setCertificado(inscricao.getCertificado());
         novoAluno.setClassePretendida(inscricao.getClassePretendida());
-
-        // Se na sua classe Aluno o campo de telefone se chamar 'contato', use: novoAluno.setContato(inscricao.getTelefone());
+        novoAluno.setTurno(inscricao.getTurno());
+        novoAluno.setIdAno(inscricao.getIdAno());
+        novoAluno.setUltimaClasse(inscricao.getUltimaClasse());
         novoAluno.setTelefone(inscricao.getTelefone()); 
 
         // Guarda no banco de dados para gerar o id_aluno oficial
@@ -91,7 +98,11 @@ public class MatriculaCustomController {
 
         matriculaRepository.save(novaMatricula);
 
-        // Retorno de sucesso limpo
+        //
+        inscricao.setAceito(true);
+        inscricaoRepository.save(inscricao);
+
+        // Retornoo de sucesso limpo
         Map<String, Object> resposta = new HashMap<>();
         resposta.put("status", "Matrícula efetuada com sucesso!");
         resposta.put("aluno", novoAluno.getNome() + " " + novoAluno.getUltimoNome());

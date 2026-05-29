@@ -27,8 +27,10 @@ public class Ocorrencia {
     @Column(nullable = false)
     private LocalDate data;
 
+    // Construtor padrão
     public Ocorrencia() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getIdAluno() { return idAluno; }

@@ -19,8 +19,10 @@ public class PeriodoLectivo {
     @Column(nullable = false, length = 50)
     private String nome;
 
+    // Construtor padrão
     public PeriodoLectivo() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getNome() { return nome; }

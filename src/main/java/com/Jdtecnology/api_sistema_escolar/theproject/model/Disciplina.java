@@ -25,17 +25,16 @@ public class Disciplina {
     @Column(name = "id_curso")
     private Integer idCurso;
 
-    // Coluna Adicionada 1: classe
     @Column(name = "classe", length = 20)
     private String classe;
-
-    // Coluna Adicionada 2: id_professor
+    
     @Column(name = "id_professor")
     private Integer idProfessor;
 
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
+    // Construtor padrão
     public Disciplina() {}
 
     // Getters e Setters

@@ -17,8 +17,10 @@ public class AtribuicaoTurma {
     @Column(name = "id_turma", nullable = false)
     private Integer idTurma;
 
+    // Construtor padrão
     public AtribuicaoTurma() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getIdProfessor() { return idProfessor; }

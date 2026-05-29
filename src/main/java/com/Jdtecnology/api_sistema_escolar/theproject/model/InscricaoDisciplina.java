@@ -23,8 +23,10 @@ public class InscricaoDisciplina {
     @Column(name = "id_periodo", nullable = false)
     private Integer idPeriodo;
 
+    // Construtor padrão
     public InscricaoDisciplina() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getIdAluno() { return idAluno; }

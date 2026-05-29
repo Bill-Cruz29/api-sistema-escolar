@@ -53,7 +53,6 @@ public class Aluno {
     @Column(name = "id_encarregado")
     private Integer idEncarregado;
 
-    // Novo campo adicionado (integer no banco)
     @Column(name = "id_pessoa")
     private Integer idPessoa;
 
@@ -81,14 +80,12 @@ public class Aluno {
     @Column(name = "classe_pretendida", length = 20)
     private String classePretendida;
 
-    // Novo campo adicionado (character varying(10) no banco)
     @Column(name = "turno", length = 10)
     private String turno;
 
     @Column(name = "id_ano")
     private Integer idAno;
 
-    // Novo campo adicionado (character varying(100) no banco) 
     @Column(name = "ultima_classe", length = 100)
     private String ultimaClasse;
 
@@ -162,28 +159,12 @@ public class Aluno {
     public Integer getIdAno() { return idAno; }
     public void setIdAno(Integer idAno) { this.idAno = idAno; }
 
-    // --- GETTERS E SETTERS DAS NOVAS COLUNAS ---
-    public Integer getIdPessoa() {
-        return idPessoa;
-    }
+    public Integer getIdPessoa() { return idPessoa; }
+    public void setIdPessoa(Integer idPessoa) { this.idPessoa = idPessoa; }
 
-    public void setIdPessoa(Integer idPessoa) {
-        this.idPessoa = idPessoa;
-    }
+    public String getTurno() { return turno; }
+    public void setTurno(String turno) { this.turno = turno; }
 
-    public String getTurno() {
-        return turno;
-    }
-
-    public void setTurno(String turno) {
-        this.turno = turno;
-    }
-
-    public String getUltimaClasse() {
-        return ultimaClasse;
-    }
-
-    public void setUltimaClasse(String ultimaClasse) {
-        this.ultimaClasse = ultimaClasse;
-    }
+    public String getUltimaClasse() { return ultimaClasse; }
+    public void setUltimaClasse(String ultimaClasse) { this.ultimaClasse = ultimaClasse; }
 }

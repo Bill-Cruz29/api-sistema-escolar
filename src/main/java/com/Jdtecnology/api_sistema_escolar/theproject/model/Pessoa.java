@@ -30,8 +30,10 @@ public class Pessoa {
     @Column(nullable = false, length = 100)
     private String curso;
 
+    // Construtor padrão
     public Pessoa() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getNome() { return nome; }

@@ -19,8 +19,10 @@ public class AnoLectivo {
     @Column(nullable = false, length = 10)
     private String ano; 
 
+    // Construtor padrão
     public AnoLectivo() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getAno() { return ano; }

@@ -23,6 +23,7 @@ public class Usuario {
     @Column(length = 20)
     private String role;
 
+    // Construtor padrão
     public Usuario() {}
 
     // Getters e Setters

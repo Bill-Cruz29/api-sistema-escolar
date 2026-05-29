@@ -27,8 +27,10 @@ public class Avaliacao {
     @Column(nullable = false)
     private LocalDate data;
 
+    // Construtor padrão
     public Avaliacao() {}
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public Integer getIdDisciplina() { return idDisciplina; }

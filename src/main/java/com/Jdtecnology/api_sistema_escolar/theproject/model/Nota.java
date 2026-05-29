@@ -38,11 +38,10 @@ public class Nota {
     @Column(name = "tipo_avaliacao", length = 50)
     private String tipoAvaliacao;
 
-    // --- NOVO CAMPO ADICIONADO CONFORME A IMAGEM ---
     @Column(name = "id_periodo")
     private Integer idPeriodo;
 
-    // Construtor padrão
+   // Construtor padrão
     public Nota() {}
 
     // Getters e Setters

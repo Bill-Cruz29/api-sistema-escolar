@@ -3,13 +3,13 @@ package com.Jdtecnology.api_sistema_escolar.theproject.model; // ALTERADO PARA .
 import java.util.Map;
 
 public class RelatorioDashboardDTO {
-    // O resto do teu código continua exatamente igual abaixo...
     private long totalAlunos;
     private long totalProfessores;
     private long totalTurmas;
     private double taxaOcupacao;
     private Map<String, Long> alunosPorCurso;
 
+    // Construtor padrão
     public RelatorioDashboardDTO(long totalAlunos, long totalProfessores, long totalTurmas, double taxaOcupacao, Map<String, Long> alunosPorCurso) {
         this.totalAlunos = totalAlunos;
         this.totalProfessores = totalProfessores;

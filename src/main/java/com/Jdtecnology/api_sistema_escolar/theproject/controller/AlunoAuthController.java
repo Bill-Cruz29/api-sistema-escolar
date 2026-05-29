@@ -42,7 +42,7 @@ public class AlunoAuthController {
         // 3. Sucesso: Retorna os dados necessários para o React montar o Portal do Aluno
         return ResponseEntity.ok(Map.of(
             "message", "Login efetuado com sucesso!",
-            "idAluno", aluno.getId(), // O React vai precisar deste ID para buscar as notas dele
+            "idAluno", aluno.getId(), // O React vai precisar deste ID para buscar as notas dele, então cconectarai com o react
             "nome", aluno.getNome(),
             "classe", aluno.getClassePretendida() != null ? aluno.getClassePretendida() : "Não Matriculado"
         ));

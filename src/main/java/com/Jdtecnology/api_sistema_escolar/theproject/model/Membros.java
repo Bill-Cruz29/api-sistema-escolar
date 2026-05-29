@@ -37,6 +37,7 @@ public class Membros {
     @Column(name = "data_criacao", updatable = false)
     private LocalDateTime dataCriacao;
 
+    // Construtor padrão 
     public Membros() {}
 
     @PrePersist
@@ -46,6 +47,7 @@ public class Membros {
         }
     }
 
+    // Getters e Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getNomeMembros() { return nomeMembros; }
